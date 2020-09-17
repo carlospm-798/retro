@@ -6,7 +6,7 @@ Actividad n.4 seminario de algoritmia.
 #include<stdlib.h>
 #include<windows.h>
 #define c 5
-#define t 100
+#define t 200
 
 //struct personaje.
 struct personaje{
@@ -45,6 +45,8 @@ int main(void){
 			    switch(op){
 	    	
 		    	    case 1:
+		    	    	
+		    	    	printf("Ingresar arreglo:\n\n\n");
 				
 		    		    //recopilación de datos de arreglo.
 		    		    printf("Ingresar arreglo de 5 digitos:\n\n\n");
@@ -67,6 +69,9 @@ int main(void){
 			        	break;
 			
 	    	    	case 2:
+	    	    		
+	    	    		printf("Repetir programa <n> veces:\n\n\n");
+	    	    		
 	    		    	if(reg==0){
 	    		    		printf("Aun no registra un arreglo.\n\n\n");
 	    		    		system("pause"); system("cls"); respuesta='s';
@@ -77,6 +82,35 @@ int main(void){
 	    	    			scanf("%i",&n); printf("\n\n\n");
 	    	    			show(n,arreglo);
 	    	    		}
+	    		    	break;
+	    		    	
+	    		    case 3:
+	    		    	printf("Struct de personajes:\n\n\n");
+	    		    	
+	    		    	for(i=0;i<c;i++){
+	    		    		fflush(stdin);
+	    		    		printf("Nombre de personaje  [%i]:    ",i+1);
+							gets(proto[i].nombre);
+	    		    		printf("Tipo de personaje    [%i]:    ",i+1);
+							gets(proto[i].tipo);
+	    		    		printf("Fuerza de personaje  [%i]:    ",i+1);
+	    		    		scanf("%f",&proto[i].fuerza);
+	    		    		printf("Salud de personaje   [%i]:    ",i+1);
+	    		    		scanf("%f",&proto[i].salud);
+	    		    		printf("\n");
+						}
+						system("cls");
+						
+						printf("Datos de personajes: \n\n\n");
+						
+						for(i=0;i<c;i++){
+							printf("Nombre P[%i]:    \t%s\n", i+1, proto[i].nombre);
+							printf("Tipo   P[%i]:    \t%s\n", i+1, proto[i].tipo);
+							printf("Fuerza P[%i]:    \t%.2f\n", i+1, proto[i].fuerza);
+							printf("Salud  P[%i]:    \t%.2f\n", i+1, proto[i].salud);
+							printf("\n");
+						}
+						
 	    		    	break;
 			
 	    		    default: printf("Error.\n");
