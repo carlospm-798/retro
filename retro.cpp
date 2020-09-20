@@ -1,4 +1,4 @@
-/*Carlos Paredes Márquez.
+/*Carlos Paredes Mï¿½rquez.
 Actividad n.4 seminario de algoritmia.
 16/09/2020.*/
 #include<stdio.h>
@@ -8,18 +8,14 @@ Actividad n.4 seminario de algoritmia.
 #define c 5
 #define t 200
 
-//struct personaje.
-struct personaje{
-	char nombre[t];
-	char tipo[t];
-	float fuerza;
-	float salud;
-}proto[c];
-
-//función mostrar.
+//funciï¿½n mostrar arreglo.
 void show(int n, float arreglo[]);
+//funciÃ³n capturar personajes.
+void capturar_personajes(void);
+//funciÃ³n mostrar personajes.
+void mostrar_personajes(void);
 
-//función principal.
+//funciï¿½n principal.
 int main(void){
 	
 	char res=0;
@@ -39,16 +35,21 @@ int main(void){
 		
 	    do{
 	    	
-	        printf("Ingresar arreglo: [1]\nMostrar arreglo: [2]\nStruct de personajes: [3]\n\n\n");
+	        printf("Salir: [0]\nIngresar arreglo: [1]\nMostrar arreglo: [2]\n");
+			printf("Struct de personajes: [3]\nMostrar struct de personajes: [4]\n\n\n");
 	        scanf("%i",&op); system("cls"); int reg;
 		    
 			    switch(op){
+
+					case 0:
+					    return 0;
+						break;
 	    	
 		    	    case 1:
 		    	    	
 		    	    	printf("Ingresar arreglo:\n\n\n");
 				
-		    		    //recopilación de datos de arreglo.
+		    		    //recopilaciï¿½n de datos de arreglo.
 		    		    printf("Ingresar arreglo de 5 digitos:\n\n\n");
 		    		        for(i=0;i<5;i++){
 		    		        	printf("Ingrese el valor del arreglo: [%i] -    ", i+1);
@@ -85,34 +86,13 @@ int main(void){
 	    		    	break;
 	    		    	
 	    		    case 3:
-	    		    	printf("Struct de personajes:\n\n\n");
-	    		    	
-	    		    	for(i=0;i<c;i++){
-	    		    		fflush(stdin);
-	    		    		printf("Nombre de personaje  [%i]:    ",i+1);
-							gets(proto[i].nombre);
-	    		    		printf("Tipo de personaje    [%i]:    ",i+1);
-							gets(proto[i].tipo);
-	    		    		printf("Fuerza de personaje  [%i]:    ",i+1);
-	    		    		scanf("%f",&proto[i].fuerza);
-	    		    		printf("Salud de personaje   [%i]:    ",i+1);
-	    		    		scanf("%f",&proto[i].salud);
-	    		    		printf("\n");
-						}
-						system("cls");
-						
-						printf("Datos de personajes: \n\n\n");
-						
-						for(i=0;i<c;i++){
-							printf("Nombre P[%i]:    \t%s\n", i+1, proto[i].nombre);
-							printf("Tipo   P[%i]:    \t%s\n", i+1, proto[i].tipo);
-							printf("Fuerza P[%i]:    \t%.2f\n", i+1, proto[i].fuerza);
-							printf("Salud  P[%i]:    \t%.2f\n", i+1, proto[i].salud);
-							printf("\n");
-						}
-						
+					    capturar_personajes();		
 	    		    	break;
-			
+
+					case 4:
+					    mostrar_personajes();
+					    break;
+
 	    		    default: printf("Error.\n");
 			
 			    printf("\n\n\nUsar otra funsion: [s] -    ");
